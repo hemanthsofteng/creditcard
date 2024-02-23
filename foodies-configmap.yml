@@ -2,8 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: foodiesmyappconfigmap
-  labels:
-    env: development
 data:
-  username: Hari
-  password: Pus
+  myapp.properties: |
+    java.username=aliens,monsters
+    java.password=5
