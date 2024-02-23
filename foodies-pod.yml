@@ -26,16 +26,16 @@ spec:
         cpu: "1000m"
         memory: "1000Mi"
     env:
-    - name: username
+    - name: java.username
       valueFrom:
         configMapKeyRef:
           name: creditcard-demo
-          key: java.username
-    - name: password
+          key: username
+    - name: java.password
       valueFrom:
         configMapKeyRef:
           name: creditcard-demo
-          key: java.password
+          key: password
     volumeMounts:
     - name: foodiesmyappconfigmapvolume
       mountPath: "/config"
