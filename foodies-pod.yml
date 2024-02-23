@@ -29,13 +29,13 @@ spec:
     - name: username
       valueFrom:
         configMapKeyRef:
-          name: foodiesconfigmap
-          key: username
+          name: creditcard-demo
+          key: java.username
     - name: password
       valueFrom:
         configMapKeyRef:
-          name: foodiesconfigmap
-          key: password
+          name: creditcard-demo
+          key: java.password
     volumeMounts:
     - name: foodiesmyappconfigmapvolume
       mountPath: "/config"
@@ -43,7 +43,7 @@ spec:
   volumes:
   - name: foodiesmyappconfigmapvolume
     configMap:
-      name: foodiesconfigmap
+      name: creditcard-demo
       items:
-      - key: myapp.properties
+      - key: "myapp.properties"
         path: "myapp.properties"
