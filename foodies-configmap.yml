@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: foodiesconfigmap
+  name: foodiesmyappconfigmap
   labels:
     env: development
 data:
