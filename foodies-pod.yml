@@ -34,7 +34,7 @@ spec:
     - name: password
       valueFrom:
         configMapKeyRef:
-          name: foodiesmyappconfigmap
+          name: foodiesconfigmap
           key: password
     volumeMounts:
     - name: foodiesmyappconfigmapvolume
@@ -43,7 +43,7 @@ spec:
   volumes:
   - name: foodiesmyappconfigmapvolume
     configMap:
-      name: foodiesmyappconfigmap
+      name: foodiesconfigmap
       items:
       - key: myapp.properties
         path: "myapp.properties"

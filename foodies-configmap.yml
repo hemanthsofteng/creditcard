@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: foodiesmyappconfigmap
+  name: foodiesconfigmap
 data:
   myapp.properties: |
     java.username=aliens,monsters
