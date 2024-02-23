@@ -40,10 +40,10 @@ spec:
     - name: foodiesmyappconfigmapvolume
       mountPath: "/config"
       readOnly: true
-volumes:
-- name: foodiesmyappconfigmapvolume
-  configMap:
-    name: foodiesmyappconfigmap
-    items:
-    - key: myapp.properties
-      value: "myapp.properties"
+  volumes:
+  - name: foodiesmyappconfigmapvolume
+    configMap:
+      name: foodiesmyappconfigmap
+      items:
+      - key: myapp.properties
+        path: "myapp.properties"
