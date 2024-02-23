@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: foodies
-    image: hemanadhareddy/foodies:1.0
+    image: hemanadhareddy/creditcard:1.0
     ports:
     - name: tomcatport
       containerPort: 8080
@@ -41,9 +41,9 @@ spec:
         mountPath: "/config"
         readOnly: true
     volumes:
-    - name: foodiesmyappconfigmapvolume
-      configMap:
-        name: foodiesmyappconfigmap
-        items:
-        - key: myapp.properties
-          value: "myapp.properties"
+      - name: foodiesmyappconfigmapvolume
+        configMap:
+          name: foodiesmyappconfigmap
+          items:
+            - key: myapp.properties
+              value: "myapp.properties"
