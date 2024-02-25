@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: creditcardConfigMap
+  labels:
+    env: development
+data:
+  myapp.properties: |
+    username: Hemanth
+    password: Reddy
