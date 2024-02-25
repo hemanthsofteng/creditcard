@@ -16,8 +16,8 @@ spec:
         cpu: 100m
         memory: 200Mi
     ports:
-    - containerPort: 8082
-      name: http
+    - name: http
+      containerPort: 8082
       protocal: TCP
     livenessProbe:
       httpGet:
