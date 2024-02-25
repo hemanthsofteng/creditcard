@@ -1,49 +1,20 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: foodiespod
-  labels:
-    name: foodies
+  name: myapp-pod
 spec:
   containers:
-  - name: foodies
+  - name: myapp-container
     image: hemanadhareddy/creditcard:1.0
     ports:
-    - name: tomcatport
-      containerPort: 8080
-      protocol: TCP
-    livenessProbe:
-      httpGet:
-        path: /data/fetch
-        port: 8080
-      initialDelaySeconds: 60
-      timeoutSeconds: 10
-    resources:
-      requests:
-        cpu: "500m"
-        memory: "512Mi"
-      limits:
-        cpu: "1000m"
-        memory: "1000Mi"
-    env:
-    - name: java.username
-      valueFrom:
-        configMapKeyRef:
-          name: creditcard-demo
-          key: java.username
-    - name: java.password
-      valueFrom:
-        configMapKeyRef:
-          name: creditcard-demo
-          key: java.password
+      -name: tomcatport
+       containerPort: 8080
+       protocal: TCP
     volumeMounts:
-    - name: foodiesmyappconfigmapvolume
-      mountPath: "/config"
-      readOnly: true
+    - name: config-volume
+      mountPath: /path/to/myapp.properties
+      subPath: myapp.properties
   volumes:
-  - name: foodiesmyappconfigmapvolume
+  - name: config-volume
     configMap:
-      name: creditcard-demo
-      items:
-      - key: "myapp.properties"
-        path: "myapp.properties"
+      name: creditcard-configmap
