@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: creditcardconfigmap
   labels:
-    env: development
 data:
   myapp.properties: |
     username: Hemanth
