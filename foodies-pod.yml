@@ -7,9 +7,9 @@ spec:
   - name: myapp-container
     image: hemanadhareddy/creditcard:1.0
     ports:
-      -name: tomcatport
-       containerPort: 8080
-       protocal: TCP
+    - name: tomcatport
+      containerPort: 8080
+      protocol: TCP
     volumeMounts:
     - name: config-volume
       mountPath: /path/to/myapp.properties
