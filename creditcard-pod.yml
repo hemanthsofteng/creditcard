@@ -51,5 +51,5 @@ spec:
     configMap:
       name: creditcardconfigmap
       items:
-      - key: myapp.properties
+      - key: "myapp.properties"
         path: "myapp.properties"
