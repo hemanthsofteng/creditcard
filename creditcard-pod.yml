@@ -56,6 +56,3 @@ spec:
       items:
       - key: myapp.properties
         path: "myapp.properties"
-    hostPath:
-      path: /usr/share/zoneinfo/Asia/Shanghai
-  restartPolicy: Always
