@@ -46,7 +46,7 @@ spec:
       mountPath: "/config"
       readOnly: true
 
-  volumes:
+volumes:
   - name: creditcardvolume
     configMap:
       name: creditcardconfigmap
