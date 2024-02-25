@@ -6,50 +6,49 @@ metadata:
     app: "creditcard"
 spec:
   containers:
-  - name: creditcard
-    image: "hemanadhareddy/creditcard:1.0"
-    resources:
-      limits:
-        cpu: 200m
-        memory: 500Mi
-      requests:
-        cpu: 100m
-        memory: 200Mi
-    ports:
-      - name: http
-        containerPort: 8082
-    livenessProbe:
-      httpGet:
-        path: /creditcard/hello
-        port: 8082
-      initialDelaySeconds: 10
-      timeoutSeconds: 15
-    readinessProbe:
-      httpGet:
-        path: /creditcard/hello
-        port: 8082
-      initialDelaySeconds: 10
-      timeoutSeconds: 15
-    env:
-    - name: java.username
-      valueFrom:
-        configMapKeyRef:
-          name: creditcardconfigmap
-          key: username
-    - name: java.password
-      valueFrom:
-        configMapKeyRef:
-          key: password
-          name: creditcardconfigmap
-    volumeMounts:
-      - name: creditcardvolume
-        mountPath: "/config"
-        readOnly: true
-
-volumes:
-  - name: creditcardvolume
-    configMap:
-      name: creditcardconfigmap
-      items:
-      - key: myapp.properties
-        path: "myapp.properties"
+    - name: creditcard
+      image: "hemanadhareddy/creditcard:1.0"
+      resources:
+        limits:
+          cpu: 200m
+          memory: 500Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi
+      ports:
+        - name: http
+          containerPort: 8082
+      livenessProbe:
+        httpGet:
+          path: /creditcard/hello
+          port: 8082
+        initialDelaySeconds: 10
+        timeoutSeconds: 15
+      readinessProbe:
+        httpGet:
+          path: /creditcard/hello
+          port: 8082
+        initialDelaySeconds: 10
+        timeoutSeconds: 15
+      env:
+        - name: java.username
+          valueFrom:
+            configMapKeyRef:
+              name: creditcardconfigmap
+              key: username
+        - name: java.password
+          valueFrom:
+            configMapKeyRef:
+              key: password
+              name: creditcardconfigmap
+      volumeMounts:
+        - name: creditcardvolume
+          mountPath: "/config"
+          readOnly: true
+  volumes:
+    - name: creditcardvolume
+      configMap:
+        name: creditcardconfigmap
+        items:
+          - key: myapp.properties
+            path: "myapp.properties"
