@@ -52,4 +52,4 @@ spec:
       name: creditcardconfigmap
       items:
       - key: "myapp.properties"
-        path: "myapp.properties"
+        path: myapp.properties
