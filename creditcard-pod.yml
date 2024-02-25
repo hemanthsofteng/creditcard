@@ -37,13 +37,13 @@ spec:
     - name: java.username
       valueFrom:
         configMapKeyRef:
-          name: creditcardConfigMap
+          name: creditcardconfigmap
           key: username
     - name: java.password
       valueFrom:
         configMapKeyRef:
           key: password
-          name: creditcardConfigMap
+          name: creditcardconfigmap
     volumeMounts:
     - name: creditcardvolume
       mountPath: "/config"
@@ -52,7 +52,7 @@ spec:
   volumes:
   - name: creditcardvolume
     configMap:
-      name: creditcardConfigMap
+      name: creditcardconfigmap
       items:
       - key: myapp.properties
         path: "myapp.properties"
