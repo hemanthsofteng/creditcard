@@ -4,5 +4,5 @@ metadata:
   name: creditcard-demo
 data:
   myapp.properties: |
-    username=aliens,monsters
-    password=5
+    java.username: aliens,monsters
+    java.password: 5

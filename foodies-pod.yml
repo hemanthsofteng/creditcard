@@ -30,12 +30,12 @@ spec:
       valueFrom:
         configMapKeyRef:
           name: creditcard-demo
-          key: username
+          key: java.username
     - name: java.password
       valueFrom:
         configMapKeyRef:
           name: creditcard-demo
-          key: password
+          key: java.password
     volumeMounts:
     - name: foodiesmyappconfigmapvolume
       mountPath: "/config"
