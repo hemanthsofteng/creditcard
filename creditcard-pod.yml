@@ -42,9 +42,9 @@ spec:
           key: password
           name: creditcardconfigmap
     volumeMounts:
-    - name: creditcardvolume
-      mountPath: "/config"
-      readOnly: true
+      - name: creditcardvolume
+        mountPath: "/config"
+        readOnly: true
 
 volumes:
   - name: creditcardvolume
