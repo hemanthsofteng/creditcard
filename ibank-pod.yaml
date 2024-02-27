@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "ibanksafepod"
+  labels:
+    app: "ibank"
+    version: "1.0"
+spec:
+  containers:
+  - name: ibank
+    image: "hemanadhareddy/creditcard:1.0"
+    ports:
+    - name: http
+      containerPort: 8082
+      protocal: TCP
+    env:
+    - name: "db.username"
+      valueFrom:
+        secretKeyRef:
+          name: ibanksecret
+          key: username
+    - name: "db.password"
+      valueFrom:
+        secretKeyRef:
+          name: ibanksecret
+          key: password
