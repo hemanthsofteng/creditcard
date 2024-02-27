@@ -12,7 +12,7 @@ spec:
       ports:
         - name: http
           containerPort: 8082
-          protocal: TCP
+          #protocal: TCP
       env:
         - name: "db.username"
           valueFrom:
